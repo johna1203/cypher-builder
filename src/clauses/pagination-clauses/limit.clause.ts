@@ -8,7 +8,7 @@ export class LimitClause extends Clause {
   protected limitParam: string;
   constructor(parametersBag: ParametersBag, limit: number) {
     super('LIMIT');
-    this.limitParam = parametersBag.add(neo4j.int(limit), true, 'limit');
+    this.limitParam = parametersBag.add(Number(limit), true, 'limit');
   }
 }
 

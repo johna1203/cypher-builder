@@ -8,7 +8,7 @@ export class SkipClause extends Clause {
   protected skipParam: string;
   constructor(parametersBag: ParametersBag, skip: number) {
     super('SKIP');
-    this.skipParam = parametersBag.add(neo4j.int(skip), true, 'skip');
+    this.skipParam = parametersBag.add(Number(skip), true, 'skip');
   }
 }
 
