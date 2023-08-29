@@ -5,10 +5,10 @@ import { Clause } from '../base-clause';
 import neo4j from 'neo4j-driver';
 
 export class LimitClause extends Clause {
-  protected limitParam: string;
+  protected limitParam: number;
   constructor(parametersBag: ParametersBag, limit: number) {
     super('LIMIT');
-    this.limitParam = parametersBag.add(Number(limit), true, 'limit');
+    this.limitParam = limit; //parametersBag.add(limit, true, 'limit');
   }
 }
 

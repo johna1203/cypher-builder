@@ -5,10 +5,10 @@ import { Clause } from '../base-clause';
 import neo4j from 'neo4j-driver';
 
 export class SkipClause extends Clause {
-  protected skipParam: string;
+  protected skipParam: number;
   constructor(parametersBag: ParametersBag, skip: number) {
     super('SKIP');
-    this.skipParam = parametersBag.add(Number(skip), true, 'skip');
+    this.skipParam = skip; //parametersBag.add(skip, true, 'skip');
   }
 }
 

@@ -8,7 +8,11 @@ describe('CALL', () => {
     // @ts-expect-error - private field
     internalBuilder.indent = 2;
     internalBuilder.match((m) => m.node('a').relationship('out').node('b'));
-    const callClause = new CallClauseStringBuilder(internalBuilder);
+    const callClause = new CallClauseStringBuilder(
+      internalBuilder,
+      false,
+      null,
+    );
     // act
     const result = callClause.build();
     // assert
